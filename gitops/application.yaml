@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: vms
+  namespace: openshift-gitops
+spec:
+  destination:
+    namespace: 00-system1 # add your name
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: gitops/base
+    repoURL: https://github.com/johanodell/argocd_ansible_ocpv
+    targetRevision: HEAD
+  syncPolicy:
+    automated: {}
+    syncOptions:
+    - CreateNamespace=true

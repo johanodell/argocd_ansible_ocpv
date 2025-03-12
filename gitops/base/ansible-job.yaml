@@ -1,0 +1,15 @@
+---
+apiVersion: tower.ansible.com/v1alpha1
+kind: AnsibleWorkflow
+metadata:
+  name: gitops-post-configuraiton-workflow
+  namespace: aap
+  annotations:
+    argocd.argoproj.io/sync-wave: "1"
+spec:
+  extra_vars: # Extra variables prompt on launch needs to be enabled in AAP/AWX
+    vm_name: rhel9-gitops1-1
+  connection_secret: controller-access
+  workflow_template_name: "gitops-post-configuraiton-workflow"
+  inventory: mothershift # Inventory prompt on launch needs to be enabled in AAP/AWX
+  

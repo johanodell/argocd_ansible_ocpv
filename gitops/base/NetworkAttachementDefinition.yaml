@@ -1,0 +1,14 @@
+apiVersion: k8s.cni.cncf.io/v1
+kind: NetworkAttachmentDefinition
+metadata:
+  annotations:
+    k8s.v1.cni.cncf.io/resourceName: bridge.network.kubevirt.io/br1
+    argocd.argoproj.io/sync-wave: "0"
+    labels:
+      app.kubernetes.io/instance: vms
+  name: labnet # add your name
+  namespace: 00-system1 
+spec:
+  config: '{"name":"labnet","type":"bridge","cniVersion":"0.3.1","bridge":"br1","macspoofchk":true,"ipam":{},"preserveDefaultVlan":false}' # fill in according to your config. name of network and bridge. 
+
+
