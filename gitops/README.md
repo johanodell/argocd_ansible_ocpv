@@ -15,4 +15,4 @@ In my example i have configured a linux bridge where i put my VM on both the pod
 Then you need to remove the NetworkAttachementDefinition.yaml from the base/kustomization.yaml file
 and clean up the rhel9.yaml file from the extra network and extra interface. 
 
-Here you can see an [!(demo](https://)](https://www.youtube.com/watch?v=VzjX9drS2lw) from where theese files have been used to run through the secnario.
+Here you can see a [demo video](https://www.youtube.com/watch?v=VzjX9drS2lw) from where theese files have been used to run through the secnario.
