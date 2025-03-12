@@ -16,8 +16,6 @@ Provision vm's with ArgoCD and Ansible in OpenShift Virtualization
 
 3. How to use ArgoCD and Ansible for a provisioning workflow [here](https://github.com/johanodell/argocd_ansible_ocpv/tree/main/gitops)
 
-4. Some ansible playbooks for provisioning VMs [here](https://github.com/johanodell/argocd_ansible_ocpv/tree/main/gitops)
-
 
 # For this to work we need to connect AAP with OCP and vice versa
 
