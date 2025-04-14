@@ -21,11 +21,11 @@ Provision vm's with ArgoCD and Ansible in OpenShift Virtualization
 
 First we need a credential. This token should be scoped but for now let's just add a cluster-admin scoped token. In your AWX/AAP namespace. 
 
-1. Add a ServiceAccount:  ```oc create sa awx-credential ```
+1. Add a ServiceAccount:  ```oc create sa controller-credential ```
 
 2. Add cluster-admin rights to the service account: ```oc adm policy add-cluster-role-to-user cluster-admin -z controller-credential```
    
-3. Create a token for the SA: ```oc create token awx-credential --duration=4294967296s``` (😱 very long time). 
+3. Create a token for the SA: ```oc create token controller-credential --duration=4294967296s``` (😱 very long time). 
 Copy it and add it as a Credential in the controller:
 
 ![Alt text](images/create_controller_credential.png)
